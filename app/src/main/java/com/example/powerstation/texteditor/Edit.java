@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +24,7 @@ import java.io.OutputStreamWriter;
 public class Edit extends Activity {
 
     private static final String TAG = "MainActivity";
-    private static final String FILENAME = "textView.txt";
+    private static final String FILENAME = "txtFile.txt";
     EditText fromFileView;
 
     @Override
@@ -52,6 +53,7 @@ public class Edit extends Activity {
                     OutputStreamWriter(openFileOutput(fileName, Context.MODE_PRIVATE));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
+            goToFirstScreen(new View(this));
         } catch (IOException e) {
             Log.e(TAG, "File write failed: " + e.toString());
         }
@@ -81,10 +83,8 @@ public class Edit extends Activity {
     }
 
     public void goToFirstScreen(View view) {
-
         Intent goToFirstIntent = new Intent(this, MainActivity.class);
         startActivity(goToFirstIntent);
-
     }
 }
 
