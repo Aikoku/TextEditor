@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Text Editor</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="textToView"></string>
+    <string name="Edit">Edit</string>
+    <string name="title_activity_edit_activity">edit_activity</string>
+
+    <string name="title_activity_edit">Edit</string>
+    <string name="saveBtn">Save</string>
+    <string name="backBtn">Back</string>
+</resources>

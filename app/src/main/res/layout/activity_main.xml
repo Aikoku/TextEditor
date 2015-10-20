@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:baselineAligned="false">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.89">
+
+        <TextView
+            android:layout_width="232dp"
+            android:layout_height="300dp"
+            android:text="@string/textToView"
+            android:id="@+id/textView"
+
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="61dp"
+            android:clickable="true"
+            android:onClick="goToEditScreen" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="@string/Edit"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal|bottom"
+            android:onClick="goToEditScreen" />
+    </FrameLayout>
+</LinearLayout>
