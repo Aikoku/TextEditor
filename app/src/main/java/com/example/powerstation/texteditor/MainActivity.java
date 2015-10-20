@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,12 +32,12 @@ public class MainActivity extends Activity {
 
         File file = this.getFileStreamPath(FILENAME);
         if (file == null || !file.exists()) {
-            Log.e(TAG, "swagerino: file not found");
+            Toast.makeText(this, "File not found", Toast.LENGTH_LONG);
             file = new File(this.getFilesDir(), FILENAME);
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                Log.e(TAG, e.getMessage().toString());
+                Toast.makeText(this, "Cant read file", Toast.LENGTH_LONG);
             }
 
         }
@@ -65,7 +66,7 @@ public class MainActivity extends Activity {
             }
         }
        catch (IOException e) {
-            Log.e(TAG, "Can not read file: " + e.toString());
+           Toast.makeText(this, "Cant read file", Toast.LENGTH_LONG);
         }
         return fileContent;
     }

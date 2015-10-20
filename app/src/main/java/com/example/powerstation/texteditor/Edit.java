@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -55,7 +56,7 @@ public class Edit extends Activity {
             outputStreamWriter.close();
             goToFirstScreen(new View(this));
         } catch (IOException e) {
-            Log.e(TAG, "File write failed: " + e.toString());
+            Toast.makeText(this, "Cant write file", Toast.LENGTH_LONG);
         }
     }
 
@@ -75,9 +76,9 @@ public class Edit extends Activity {
                 fileContent = stringBuilder.toString();
             }
         } catch (FileNotFoundException e) {
-            Log.e(TAG, "File not found: " + e.toString());
+            Toast.makeText(this, "Cant read file", Toast.LENGTH_LONG);
         } catch (IOException e) {
-            Log.e(TAG, "Can not read file: " + e.toString());
+            Toast.makeText(this, "Cant read file", Toast.LENGTH_LONG);
         }
         return fileContent;
     }
